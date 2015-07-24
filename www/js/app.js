@@ -1,7 +1,17 @@
 var campos = "MarketCapitalization,EBITDA,Name,PERatio,PEGRatio,Symbol,EUR";
 var empresas = "'AAPL', 'XOM', 'MSFT', 'GOOG', 'GE', 'CVX', 'IBM', 'PFE'";
 
+
+
 $(document).ready(function(){
+
+	console.log("aaaa");
+  	$("#acordeon").accordion({
+  		active: false,
+  		header: "a",
+  		collapsible: "true"
+  	});
+
 	app.initialize();
 
 	var link = "http://query.yahooapis.com/v1/public/yql?q=select%20"+ campos +
@@ -13,7 +23,7 @@ $(document).ready(function(){
 	});
 
   	datos.done(function(data){
-    	console.log( "second success" );
+    	console.log( "success" );
     	objeto = data.query.results.quote[0];
     	cuerpo = "<p> EBITDA: " + objeto.EBITDA + "<br>" + 
     			"MarketCapitalization: "+ objeto.MarketCapitalization + "</p>";
@@ -23,4 +33,6 @@ $(document).ready(function(){
   	datos.fail(function(){
   		console.log("nooooor");
   	});
+
+
 });

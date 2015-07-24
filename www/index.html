@@ -29,7 +29,7 @@
 
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
-
+        <link href="css/jquery-ui.min.css" rel="stylesheet">
         <!-- Custom CSS -->
         <link href="css/sb-admin.css" rel="stylesheet">
 
@@ -37,33 +37,29 @@
         <link href="css/plugins/morris.css" rel="stylesheet">
 
         <!-- Custom Fonts -->
-        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-        <!--<link rel="stylesheet" type="text/css" href="css/index.css" />-->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">        
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
+                
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
 
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+
+        <!-- Morris Charts JavaScript 
+        <script src="js/plugins/morris/raphael.min.js"></script>
+        <script src="js/plugins/morris/morris.min.js"></script>
+        <script src="js/plugins/morris/morris-data.js"></script>
+        -->
+        
+        <script type="text/javascript" src="js/app.js"></script>
         <title>Bolsa de Valores</title>
+
     </head>
 
-    <body>
-
-    
-    <!--
-        <div class="app">
-            <h1>BOLSA MADRID</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">
-                	Device is Ready
-                	<a href="http://google.es"> Entry</a>
-                </p>
-            </div>
-        </div>
-    -->
-
+    <body>    
       <div id="wrapper">
 
         <!-- Navigation -->
@@ -76,7 +72,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin</a>
+                <a class="navbar-brand" href="index.html">Bolsa Virtual</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -222,8 +218,11 @@
             <!-- /.navbar-collapse -->
         </nav>
 
+        
+        <!--  ********  -->
+        <!--  *PAGINA*  -->
+        <!--  ********  -->
         <div id="page-wrapper">
-
             <div class="container-fluid">
 
                 <!-- Page Heading -->
@@ -234,97 +233,225 @@
                         </h1>                    
                     </div>
                 </div>
-
                 <!-- /.row -->
 
                 <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-primary">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-comments fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">NASDAQ</div>
-                                        
+                    <div id="acordeon">                        
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-comments fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">NASDAQ</div>                                           
+                                        </div>
                                     </div>
                                 </div>
+                                
+                                 <a href="#">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">M&aacute;s Detalles</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>&Uacute;lt.</th>
+                                                    <th>%Dif</th>
+                                                    <th>Max</th>
+                                                    <th>Volumen</th>
+                                                    <th>Efectivo(miles €)</th>
+                                                    <th>Fecha</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>                                                
+                                                <tr>
+                                                    <td>/index.html</td>
+                                                    <td>1265</td>
+                                                    <td>32.3%</td>
+                                                    <td>$321.33</td>
+                                                    <td>1265</td>
+                                                    <td>32.3%</td>
+                                                    <td>$321.33</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>   
+                                <!-- opcion acordeon -->                     
                             </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">M&aacute;s Detalles</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-tasks fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">IBEX-35</div>
+                        
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-green">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-tasks fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">IBEX-35</div>
+                                        </div>
                                     </div>
                                 </div>
+                                <a href="#">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">M&aacute;s Detalles</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>    
+                                    <div class="col-lg-3 col-md-6">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>&Uacute;lt.</th>
+                                                    <th>%Dif</th>
+                                                    <th>Max</th>
+                                                    <th>Volumen</th>
+                                                    <th>Efectivo(miles €)</th>
+                                                    <th>Fecha</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    <td>/index.html</td>
+                                                    <td>1265</td>
+                                                    <td>32.3%</td>
+                                                    <td>$321.33</td>
+                                                    <td>1265</td>
+                                                    <td>32.3%</td>
+                                                    <td>$321.33</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>   
+                                <!-- opcion acordeon -->                                
                             </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">M&aacute;s Detalles</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-yellow">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-shopping-cart fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">UK</div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-yellow">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-shopping-cart fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">UK</div>
+                                        </div>
                                     </div>
                                 </div>
+                                <a href="#">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">M&aacute;s Detalles</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>    
+                                    <div class="col-lg-3 col-md-6">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>&Uacute;lt.</th>
+                                                    <th>%Dif</th>
+                                                    <th>Max</th>
+                                                    <th>Volumen</th>
+                                                    <th>Efectivo(miles €)</th>
+                                                    <th>Fecha</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    <td>/index.html</td>
+                                                    <td>1265</td>
+                                                    <td>32.3%</td>
+                                                    <td>$321.33</td>
+                                                    <td>1265</td>
+                                                    <td>32.3%</td>
+                                                    <td>$321.33</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>   
+                                <!-- opcion acordeon -->                                
                             </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">M&aacute;s Detalles</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
                         </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="panel panel-red">
-                            <div class="panel-heading">
-                                <div class="row">
-                                    <div class="col-xs-3">
-                                        <i class="fa fa-support fa-5x"></i>
-                                    </div>
-                                    <div class="col-xs-9 text-right">
-                                        <div class="huge">BRASIL</div>
+
+                        <div class="col-lg-3 col-md-6">
+                            <div class="panel panel-red">
+                                <div class="panel-heading">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            <i class="fa fa-support fa-5x"></i>
+                                        </div>
+                                        <div class="col-xs-9 text-right">
+                                            <div class="huge">BRASIL</div>
+                                        </div>
                                     </div>
                                 </div>
+                                <a href="#">
+                                    <div class="panel-footer">
+                                        <span class="pull-left">M&aacute;s Detalles</span>
+                                        <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                </a>
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="table-responsive">
+                                        <table class="table table-bordered table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>&Uacute;lt.</th>
+                                                    <th>%Dif</th>
+                                                    <th>Max</th>
+                                                    <th>Volumen</th>
+                                                    <th>Efectivo(miles €)</th>
+                                                    <th>Fecha</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                
+                                                <tr>
+                                                    <td>/index.html</td>
+                                                    <td>1265</td>
+                                                    <td>32.3%</td>
+                                                    <td>$321.33</td>
+                                                    <td>1265</td>
+                                                    <td>32.3%</td>
+                                                    <td>$321.33</td>
+                                                </tr>
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>   
+                                <!-- opcion acordeon -->
                             </div>
-                            <a href="#">
-                                <div class="panel-footer">
-                                    <span class="pull-left">M&aacute;s Detalles</span>
-                                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </a>
-                        </div>
+                        </div>                    
                     </div>
                 </div>
-                <!-- /.row -->
+                <!-- /.row -->               
             </div>
             <!-- /.container-fluid -->
         </div>
@@ -333,16 +460,6 @@
         </div>
         <!-- /#wrapper -->
 
-        <!-- jQuery -->
-        <script src="js/jquery.js"></script>
 
-        <!-- Bootstrap Core JavaScript -->
-        <script src="js/bootstrap.min.js"></script>
-
-
-        <!-- Morris Charts JavaScript -->
-        <script src="js/plugins/morris/raphael.min.js"></script>
-        <script src="js/plugins/morris/morris.min.js"></script>
-        <script src="js/plugins/morris/morris-data.js"></script>
     </body>    
 </html>
