@@ -9,7 +9,8 @@ $(document).ready(function(){
   	$("#acordeon").accordion({
   		active: false,
   		header: "a",
-  		collapsible: "true"
+  		collapsible: "true",
+  		animate: 100
   	});
 
 	app.initialize();
